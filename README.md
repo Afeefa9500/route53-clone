@@ -54,9 +54,14 @@ npm run dev
 
 Open: http://localhost:3000
 
-Demo login:
-- Username: `admin`
-- Password: `admin123`
+## Authentication
+
+This project uses a single demo administrator account.
+
+Username: `admin`  
+Password: `admin123`
+
+No user registration or additional account creation is supported.
 
 ## Database
 `backend/route53.db` is generated automatically on first backend startup. It is intentionally ignored by Git.
