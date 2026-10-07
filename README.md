@@ -63,7 +63,7 @@ Demo login:
 
 ## Database schema
 `users` stores the demo account; `sessions` stores expiring bearer sessions; `hosted_zones` stores zone metadata; `records` stores DNS record sets with a foreign key back to the zone and a unique `(zone_id, name, type)` constraint.
-![AWS Route 53 Clone Database Schema](docs/AWS%20ROUTE53%20DB.png)
+![AWS Route 53 Clone Database Schema](DOCS/AWS%20ROUTE53%20DB.png)
 
 ## API overview
 - `POST /api/auth/login`
