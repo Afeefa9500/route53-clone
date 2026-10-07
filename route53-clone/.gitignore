@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env
+.env.local
+*.pyc
+__pycache__/
+route53.db
+.venv/

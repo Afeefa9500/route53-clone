@@ -1,0 +1,3 @@
+"use client";
+import {useEffect} from "react";
+export default function Modal({title,onClose,children,footer}:{title:string;onClose:()=>void;children:React.ReactNode;footer:React.ReactNode}){useEffect(()=>{const h=(e:KeyboardEvent)=>e.key==="Escape"&&onClose();addEventListener("keydown",h);return()=>removeEventListener("keydown",h)},[onClose]);return <div className="ovl" onMouseDown={e=>e.target===e.currentTarget&&onClose()}><div className="modal" role="dialog" aria-modal="true"><div className="box-h"><h2>{title}</h2><button className="iconbtn" onClick={onClose}>×</button></div><div className="box-b">{children}</div><div className="ft">{footer}</div></div></div>}
