@@ -1,6 +1,9 @@
 # AWS Route 53 Clone
 
-A functional Route 53 console clone built for the Scaler SDE Fullstack assignment.
+A functional AWS Route 53 console clone developed for the Scaler SDE Fullstack assignment.
+
+The application recreates core Route 53 hosted zone and DNS record management workflows with a Next.js frontend, FastAPI backend, and SQLite database.
+
 
 ## Stack
 - Frontend: Next.js 14 + React + TypeScript
@@ -25,6 +28,8 @@ A functional Route 53 console clone built for the Scaler SDE Fullstack assignmen
 - Keyboard shortcuts: Ctrl/Cmd+K focuses search; N opens Create Hosted Zone outside form fields
 - Server-side validation and protected NS/SOA records
 - SQLite persistence
+
+![AWS Route 53 Clone Workflow](DOCS/WorkFlow.drawio.png)
 
 ## Run backend
 Windows PowerShell:
@@ -56,6 +61,10 @@ Demo login:
 ## Database
 `backend/route53.db` is generated automatically on first backend startup. It is intentionally ignored by Git.
 
+## Database schema
+`users` stores the demo account; `sessions` stores expiring bearer sessions; `hosted_zones` stores zone metadata; `records` stores DNS record sets with a foreign key back to the zone and a unique `(zone_id, name, type)` constraint.
+![AWS Route 53 Clone Database Schema](docs/AWS%20ROUTE53%20DB.png)
+
 ## API overview
 - `POST /api/auth/login`
 - `POST /api/auth/logout`
@@ -68,8 +77,9 @@ Demo login:
 - `GET /api/hosted-zones/{id}/export?format=json|bind`
 - `POST /api/hosted-zones/{id}/import-bind`
 
-## Database schema
-`users` stores the demo account; `sessions` stores expiring bearer sessions; `hosted_zones` stores zone metadata; `records` stores DNS record sets with a foreign key back to the zone and a unique `(zone_id, name, type)` constraint.
+## Demo
+
+**Live Demo:** [AWS Route 53 Clone](https://route53-clone-ivory.vercel.app/login)
 
 ## Notes
 This project recreates Route 53 workflows and UI patterns; it does not perform real DNS hosting or AWS API operations, matching the assignment's stated scope.
