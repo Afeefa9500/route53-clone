@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://route53-clone-ocjr.onrender.com/api/$1"
+    }
+  ]
+}
